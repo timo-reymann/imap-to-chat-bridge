@@ -1,16 +1,18 @@
 module github.com/timo-reymann/imap-to-chat-bridge
 
-go 1.21.3
+go 1.21.4
 
 require (
+	github.com/containrrr/shoutrrr v0.8.0
 	github.com/emersion/go-imap v1.2.1
 	github.com/emersion/go-message v0.17.0
+	github.com/kelseyhightower/envconfig v1.4.0
+	jaytaylor.com/html2text v0.0.0-20230321000545-74c2419ad056
 )
 
 require (
 	cloud.google.com/go/compute v1.14.0 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
-	github.com/containrrr/shoutrrr v0.8.0 // indirect
 	github.com/emersion/go-sasl v0.0.0-20200509203442-7bfe0ed36a21 // indirect
 	github.com/emersion/go-textwrapper v0.0.0-20200911093747-65d896831594 // indirect
 	github.com/fatih/color v1.15.0 // indirect
@@ -19,7 +21,6 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/kelseyhightower/envconfig v1.4.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
@@ -43,5 +44,4 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	jaytaylor.com/html2text v0.0.0-20230321000545-74c2419ad056 // indirect
 )
