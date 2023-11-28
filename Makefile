@@ -51,13 +51,13 @@ build-openbsd: create-dist ## Build binaries for OpenBSD
     @CGO_ENABLED=0 GOOS=openbsd GOARCH=386 go build -o $(BIN_PREFIX)openbsd-i386 $(BUILD_ARGS)
 
 build-docker: ## Build docker image based on the built linux builds in the dist folder
-	@docker buildx build --tag timoreymann/fritzbox-based-presence:latest \
+	@docker buildx build --tag timoreymann/imap-to-chat-bridge:latest \
 		--platform linux/amd64,linux/arm/v7,linux/arm64 \
 		--build-arg BUILD_TIME="$(NOW)" \
 		--build-arg BUILD_VERSION="$(VERSION)" \
 		--build-arg BUILD_COMMIT_REF="$(COMMIT_REF)" \
 		--push .
-	@docker buildx build --tag timoreymann/fritzbox-based-presence:$(VERSION) \
+	@docker buildx build --tag timoreymann/imap-to-chat-bridge:$(VERSION) \
 		--platform linux/amd64,linux/arm/v7,linux/arm64 \
 		--build-arg BUILD_TIME="$(NOW)" \
 		--build-arg BUILD_VERSION="$(VERSION)" \
