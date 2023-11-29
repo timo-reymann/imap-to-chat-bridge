@@ -6,6 +6,7 @@ import (
 	"github.com/timo-reymann/imap-to-chat-bridge/pkg/imap"
 	"github.com/timo-reymann/imap-to-chat-bridge/pkg/notification"
 	"log"
+	"strconv"
 	"time"
 )
 
@@ -34,10 +35,17 @@ func Execute() {
 
 			email := result.Email
 
-			err := notification.SendToChat(config.Get().NotificationUris[0], email)
-			if err != nil {
-				log.Println("Failed to send mail '" + email.Subject + "' to chat: " + err.Error())
-			} else {
+			atLeastOneSent := false
+			for idx, uri := range config.Get().NotificationUris {
+				err := notification.SendToChat(uri, email)
+				if err == nil {
+					atLeastOneSent = true
+				} else {
+					log.Println("Failed to send mail '" + email.Subject + "' to chat " + strconv.Itoa(idx) + ": " + err.Error())
+				}
+			}
+
+			if atLeastOneSent {
 				err := client.DeleteMail(email.Uid)
 				if err != nil {
 					continue
@@ -45,7 +53,9 @@ func Execute() {
 			}
 		}
 
-		client.Close()
+		if err := client.Close(); err != nil {
+			log.Println("Failed to close connection: " + err.Error())
+		}
 		println("Polling in 10s again ...")
 		time.Sleep(10 * time.Second)
 	}

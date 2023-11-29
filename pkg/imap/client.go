@@ -38,7 +38,6 @@ func NewClient(host string, port int, useTls bool, mail string, password string)
 	if err != nil {
 		return nil, err
 	}
-
 	err = imapClient.Login(mail, password)
 	if err != nil {
 		return nil, err
@@ -169,6 +168,10 @@ func (c *Client) parseEmail(msg *imap.Message, bodySection *imap.BodySectionName
 }
 
 // Close connection and delete all messages marked as delete
-func (c *Client) Close() {
-	_ = c.imap.Close()
+func (c *Client) Close() error {
+	if err := c.imap.Close(); err != nil {
+		return err
+	}
+
+	return nil
 }
