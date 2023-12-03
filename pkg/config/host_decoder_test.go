@@ -1,6 +1,9 @@
 package config
 
-import "testing"
+import (
+	"errors"
+	"testing"
+)
 
 func TestHostDecoder_Decode(t *testing.T) {
 	testCases := []struct {
@@ -12,6 +15,16 @@ func TestHostDecoder_Decode(t *testing.T) {
 			"localhost:993",
 			HostInfo{"localhost", 993},
 			nil,
+		},
+		{
+			"localhost",
+			HostInfo{},
+			errors.New("address localhost: missing port in address"),
+		},
+		{
+			"localhost:abc",
+			HostInfo{},
+			errors.New("strconv.Atoi: parsing \"abc\": invalid syntax"),
 		},
 	}
 
