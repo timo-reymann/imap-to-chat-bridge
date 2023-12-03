@@ -39,6 +39,7 @@ imap-to-chat-bridge
 ### Start service with docker-compose
 
 - Create `docker-compose.yml`
+
   ```yaml
   version: "3.5"
   services:
