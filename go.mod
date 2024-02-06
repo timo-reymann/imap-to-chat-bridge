@@ -1,6 +1,6 @@
 module github.com/timo-reymann/imap-to-chat-bridge
 
-go 1.21.7
+go 1.22.0
 
 require (
 	github.com/containrrr/shoutrrr v0.8.0
