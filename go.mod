@@ -5,7 +5,7 @@ go 1.22.2
 require (
 	github.com/containrrr/shoutrrr v0.8.0
 	github.com/emersion/go-imap v1.2.1
-	github.com/emersion/go-message v0.18.0
+	github.com/emersion/go-message v0.18.1
 	github.com/kelseyhightower/envconfig v1.4.0
 	jaytaylor.com/html2text v0.0.0-20230321000545-74c2419ad056
 )

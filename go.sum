@@ -62,6 +62,8 @@ github.com/emersion/go-message v0.17.0 h1:NIdSKHiVUx4qKqdd0HyJFD41cW8iFguM2XJnRZ
 github.com/emersion/go-message v0.17.0/go.mod h1:/9Bazlb1jwUNB0npYYBsdJ2EMOiiyN3m5UVHbY7GoNw=
 github.com/emersion/go-message v0.18.0 h1:7LxAXHRpSeoO/Wom3ZApVZYG7c3d17yCScYce8WiXA8=
 github.com/emersion/go-message v0.18.0/go.mod h1:Zi69ACvzaoV/MBnrxfVBPV3xWEuCmC2nEN39oJF4B8A=
+github.com/emersion/go-message v0.18.1 h1:tfTxIoXFSFRwWaZsgnqS1DSZuGpYGzSmCZD8SK3QA2E=
+github.com/emersion/go-message v0.18.1/go.mod h1:XpJyL70LwRvq2a8rVbHXikPgKj8+aI0kGdHlg16ibYA=
 github.com/emersion/go-sasl v0.0.0-20200509203442-7bfe0ed36a21 h1:OJyUGMJTzHTd1XQp98QTaHernxMYzRaOasRir9hUlFQ=
 github.com/emersion/go-sasl v0.0.0-20200509203442-7bfe0ed36a21/go.mod h1:iL2twTeMvZnrg54ZoPDNfJaJaqy0xIQFuBdrLsmspwQ=
 github.com/emersion/go-textwrapper v0.0.0-20200911093747-65d896831594 h1:IbFBtwoTQyw0fIM5xv1HF+Y+3ZijDR839WMulgxCcUY=
